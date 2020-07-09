@@ -48,3 +48,7 @@ function onReviewSubmit() {
 
     // ["jaanuar",""]
 }
+
+function onBack() {
+    localStorage.setItem("editmode", true);
+}

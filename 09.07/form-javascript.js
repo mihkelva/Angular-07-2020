@@ -3,6 +3,18 @@ var registrationsDiv = document.getElementById("registrations");
 console.log(registrationsDiv);
 var registrationsData = "";
 
+function buildForm() {
+    var isEditMode = localStorage.getItem("editmode");
+    console.log(isEditMode);
+    if (isEditMode=="true") {
+        document.getElementById("firstname").value = localStorage.getItem("firstname");
+        document.getElementById("lastname").value = localStorage.getItem("lastname");
+        document.getElementById("phone").value = localStorage.getItem("phone");
+        document.getElementById("email").value = localStorage.getItem("email");
+    }
+    localStorage.removeItem("editmode");
+}
+
 function onSubmit(e) {
     // preventDefault abil ei tule refreshi
     // e tähendab eventi
